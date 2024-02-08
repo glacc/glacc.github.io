@@ -1,0 +1,58 @@
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>Amiga module player</title>
+		<script type="text/javascript" charset="UTF-8" src="main.js"></script>
+		<style>
+			.centered {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="text-align: center; font: 12px Arial">
+			<p>
+				Amiga module player
+			</p>
+			<p>
+				<input type="file" id="modfile" accept=".mod" multiple="false">
+			</p>
+			<p>
+				<button id="loadbtn" style="width: 100px; background: #ccc">Load</button>
+				<button id="playbtn" style="width: 100px; background: #ccc;">Play</button>
+				<label for="posjump">　Jump to: </label>
+				<select id="posjump" style="width: 75px">
+					<option value="0">00 (00)</option>
+				</select>
+			</p>
+			<p>
+				<button id="mutebtn" style="width: 130px; background: #ccc">Mute / Unmute</button>
+				<label for="solobtn"> / </label>
+				<button id="solobtn" style="width: 50px; background: #ccc">Solo</button>
+				<label for="mutesel"> : </label>
+				<select id="mutesel" style="width: 70px">
+				</select>
+				<label for="muteallbtn">　　</label>
+				<button id="muteallbtn" style="width: 100px; background: #ccc">Mute All</button>
+				<button id="umutebtn" style="width: 100px; background: #ccc;">Unmute All</button>
+			</p>
+			<p>
+				<button id="interpolationbtn" style="width: 150px; background: #ccc">Interpolation On</button>
+				<button id="smoothscrollbtn" style="width: 150px; background: #ccc;">Smooth Scrolling Off</button>
+				<button id="stereobtn" style="width: 100px; background: #ccc;">Mono</button>
+			</p>
+			<p>
+				<label for="desiredfps">FPS: </label>
+				<input type="number" id="desiredfps" value="30" step="1" min="1" max="60" style="width: 50px">
+			</p>
+			<div><canvas class="centered" id='songname' width="564" height="40"></canvas></div>
+			<div><canvas class="centered" id='scope' width="564" height="80"></canvas></div>
+			<div><canvas class="centered" id='pattern' width="1920" height="384"></canvas></div>
+			<div><canvas class="centered" id='samples' width="564" height="192"></canvas></div>
+			<p>Glacc 2019-2023</p>
+			<u><a href="http://github.com/glacc/amp">http://github.com/glacc/amp</a></u>
+		</div>
+	</body>
+</html>
