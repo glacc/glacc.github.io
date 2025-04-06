@@ -508,7 +508,7 @@ function mixChannels() {
 				}
 				if (ch.startcount < volRampNewSmp << 1) ch.startcount ++ ;
 
-				if (!ch.mute&&res!=undefined&&isNaN(res)) {
+				if (!ch.mute&&res!=undefined&&!isNaN(res)) {
 					if (ch.pan!=-1) {
 						var panL = 1;
 						var panR = 1;
