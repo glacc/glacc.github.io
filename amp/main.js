@@ -443,6 +443,10 @@ function load_module() {
 	loaded = 1;
 }
 
+function clamp(num, min, max) {
+	return Math.max(Math.min(num, max), min);
+}
+
 function mixChannels() {
 	a = 0;
 	var outL = 0;
@@ -504,7 +508,7 @@ function mixChannels() {
 				}
 				if (ch.startcount < volRampNewSmp << 1) ch.startcount ++ ;
 
-				if (!ch.mute&&res!=undefined&&res!=NaN) {
+				if (!ch.mute&&res!=undefined&&isNaN(res)) {
 					if (ch.pan!=-1) {
 						var panL = 1;
 						var panR = 1;
@@ -556,6 +560,13 @@ function mixChannels() {
 	}
 	scopePos++;
 	if (scopePos>=bufferSize) scopePos=0;
+
+	/*
+	outL = clamp(outL, -1.0, 1.0);
+	outR = clamp(outR, -1.0, 1.0);
+	outM = clamp(outM, -1.0, 1.0);
+	*/
+	
 	return [outL, outR, outM/1.4];
 }
 
